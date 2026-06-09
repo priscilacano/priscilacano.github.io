@@ -1,16 +1,10 @@
 # Priscila Cano Academic Website
 
-This package contains a professional academic website in English.
+Final updated version with:
+- About as homepage
+- Current Research section with conceptual framework image
+- ORCID, Google Scholar, and LinkedIn links
+- Publications section with downloadable paper PDF
+- One-section-at-a-time navigation
 
-Files:
-- index.html
-- styles.css
-- script.js
-- profile.jpg
-- Priscila_Cano_CV.pdf
-
-To publish with GitHub Pages:
-1. Upload these files to your repository.
-2. Go to Settings > Pages.
-3. Select the main branch and root folder.
-4. Save and wait for GitHub Pages to publish the site.
+Upload all files and folders to the GitHub repository `priscilacano.github.io`.
