@@ -1,35 +1,40 @@
 const year = document.querySelector("#year");
-if (year) year.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
-const clickableItems = document.querySelectorAll("[data-section]");
-const sections = document.querySelectorAll(".page-section");
-const menu = document.querySelector(".tabs");
-const toggle = document.querySelector(".menu-toggle");
+const pages = document.querySelectorAll(".page");
+const navLinks = document.querySelectorAll("[data-page]");
+const menu = document.querySelector(".nav");
+const menuButton = document.querySelector(".menu-button");
 
-function showSection(sectionId) {
-  sections.forEach(section => {
-    section.classList.toggle("active", section.id === sectionId);
+function showPage(pageId) {
+  pages.forEach(page => {
+    page.classList.toggle("active", page.id === pageId);
   });
 
-  document.querySelectorAll(".tab").forEach(tab => {
-    tab.classList.toggle("active", tab.dataset.section === sectionId);
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.classList.toggle("active", link.dataset.page === pageId);
   });
 
-  if (menu) menu.classList.remove("open");
+  if (menu) {
+    menu.classList.remove("open");
+  }
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-clickableItems.forEach(item => {
-  item.addEventListener("click", event => {
-    const sectionId = item.dataset.section;
-    if (!sectionId) return;
+navLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    const pageId = link.dataset.page;
+    if (!pageId) return;
     event.preventDefault();
-    showSection(sectionId);
+    showPage(pageId);
   });
 });
 
-if (toggle && menu) {
-  toggle.addEventListener("click", () => {
+if (menuButton && menu) {
+  menuButton.addEventListener("click", () => {
     menu.classList.toggle("open");
   });
 }
